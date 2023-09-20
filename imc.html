@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+        body{
+          background-color: aquamarine;
+          text-align: center;
+        }
+        #txtPeso{
+          background-color: rgb(195, 195, 233);
+            color: white;
+        }
+        #txtAltura{
+          background-color: rgb(195, 195, 233);
+            color: white;
+        }
+        #txtIMC{
+          background-color: rgb(195, 195, 233);
+            color: white;
+        }
+        #txtPeso{
+          background-color: rgb(195, 195, 233);
+            color: white;
+        }
+        input{
+          background-color: rgb(139, 139, 192);
+            color: white;
+        }
+  </style>
+  <script>
+
+    function click_calcular() {
+      let Peso = document.getElementById("txtPeso").value;
+      let Altura = document.getElementById("txtAltura").value;
+      if (Peso == ""){
+        alert("Informe o peso");
+      }else if (Altura == ""){
+        alert("Informe a altura");
+      }else{
+        let calculo = Number(Peso) / (Number(Altura)*Number(Altura));
+        document.getElementById("txtIMC").value = calculo;
+        
+      }
+    }
+
+    function click_limpar() {
+      document.getElementById("txtPeso").value = "";
+      document.getElementById("txtAltura").value = "";
+      document.getElementById("txtIMC").value = "";
+      
+    }
+
+
+  </script>
+</head>
+
+<body>
+  <h1 id="tit">
+    Calculadora
+  </h1>
+
+  <form>
+    <div>
+      <label for="txtPeso">Peso</label>
+      <input type="number" name="" id="txtPeso">
+    </div>
+    <div>
+      <label for="txtAltura">Altura</label>
+      <input type="number" name="" id="txtAltura">
+    </div>
+    <div>
+      <label for="txtIMC">Calcular IMC: </label>
+      <input type="number" name="" id="txtIMC" disabled>
+    </div>
+    <div>
+      <input type="button" value="Calcular" onclick="click_calcular();">
+
+      <input type="button" value="Limpar" onclick="click_limpar();">
+    </div>
+  </form>
+
+
+
+</body>
+
+</html>
